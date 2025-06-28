@@ -13,12 +13,18 @@ public partial class MainPageViewModel : ObservableObject
         CheckPermissionsAsync().ConfigureAwait(false);
 
     }
-    public async Task CheckPermissionsAsync()
+    public static async Task CheckPermissionsAsync()
     {
-        bool granted = await permissionService.RequestStoragePermissionsLoopAsync();
-        if (granted)
+        var permissionService = new PermissionService();
+        bool hasPermissions = await permissionService.RequestStoragePermissionsLoopAsync();
+
+        if (hasPermissions)
         {
-            // Виконати логіку з файлами
+            // Continue working with file storage
+        }
+        else
+        {
+            // Handle user denial gracefully
         }
     }
 }
