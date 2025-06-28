@@ -1,4 +1,4 @@
-# permissions_sampleApp
+# Permissions sampleApp
 
 `permissions_sampleApp` is a .NET MAUI sample demonstrating how to implement a storage permission request service for Android. It handles checking and requesting read/write storage permissions in a loop until granted, and guides users to the app settings if permissions are permanently denied.
 
