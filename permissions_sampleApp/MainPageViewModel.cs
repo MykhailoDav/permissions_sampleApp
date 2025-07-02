@@ -13,9 +13,9 @@ public partial class MainPageViewModel : ObservableObject
         CheckPermissionsAsync().ConfigureAwait(false);
 
     }
-    public static async Task CheckPermissionsAsync()
+    
+    public async Task CheckPermissionsAsync()
     {
-        var permissionService = new PermissionService();
         bool hasPermissions = await permissionService.RequestStoragePermissionsLoopAsync();
 
         if (hasPermissions)
